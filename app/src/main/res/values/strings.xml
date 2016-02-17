@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">KlayQuizzonificationSoftwareExcellentTime</string>
+    <string name = "mainTitle">The Quizzening is upon you!</string>
+    <string name = "explanation">This is a short, underwhelming quizz about cultural junk the
+    creator Klay likes.  Its mostly old stuff from the early 2000's no one cares about anymore.
+    Hooray! Time is slowly killing me!</string>
+    <string name = "beginButton">QUIZZ GO!!</string>
+</resources>
