@@ -5,4 +5,53 @@
     android:layout_width="match_parent" android:layout_height="match_parent"
     tools:context="com.wisc.cs.klay2.klayquizzonificationsoftwareexcellenttime.Fragmentq1">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="HEADER"
+            android:id="@+id/header"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:textSize="42dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="QUESTION CONTENT GOES IN HERE"
+            android:id="@+id/textView3"
+            android:textSize="24dp"
+            android:layout_above="@+id/buttonAns1"
+            android:layout_centerHorizontal="true"
+            android:textAlignment="center" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ANSWER TEXT 1 GOES IN HERE"
+            android:id="@+id/buttonAns1"
+            android:layout_above="@+id/buttonAns2"
+            android:layout_centerHorizontal="true" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ANSWER TEXT 2 GOES IN HERE"
+            android:id="@+id/buttonAns2"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ANSWER TEXT3 GOES IN HERE"
+            android:id="@+id/buttonAns3"
+            android:layout_below="@+id/buttonAns2"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
 </FrameLayout>
