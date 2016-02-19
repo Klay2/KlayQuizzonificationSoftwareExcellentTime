@@ -53,5 +53,13 @@
             android:id="@+id/buttonAns3"
             android:layout_below="@+id/buttonAns2"
             android:layout_centerHorizontal="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NEXT"
+            android:id="@+id/button3"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
     </RelativeLayout>
 </FrameLayout>
