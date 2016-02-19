@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.app.Fragment;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.view.LayoutInflater;
@@ -20,7 +21,9 @@ public class Fragmentq1 extends Fragment {
     private RadioButton button1;
     private RadioButton button2;
     private RadioButton button3;
+    private Button next;
     private int correctAns;
+    boolean rightAns;
     OnAnsweredListener ansListener;
 
     public Fragmentq1(){
@@ -55,49 +58,50 @@ public class Fragmentq1 extends Fragment {
         button1 = view.findViewById(R.id.buttonAns1);
         button2 = view.findViewById(R.id.buttonAns2);
         button3 = view.findViewById(R.id.buttonAns3);
-
+        next = view.findViewById(R.id.buttonNext);
         View.OnClickListener button1Click = new View.OnClickListener(){
             public void onClick(View v){
-                boolean rightAns;
                 if(correctAns == 1){
                     rightAns = true;
                 }
                 else{
                     rightAns = false;
                 }
-                ansListener.answered(rightAns);
+
             }
             //close frag start new frag
         };
 
         View.OnClickListener button2Click = new View.OnClickListener(){
             public void onClick(View v){
-                boolean rightAns;
                 if(correctAns == 2){
                     rightAns = true;
                 }
-                else{
+                else {
                     rightAns = false;
                 }
-                ansListener.answered(rightAns);
             }
             //close frag start new frag
         };
 
         View.OnClickListener button3Click = new View.OnClickListener(){
             public void onClick(View v){
-                boolean rightAns;
                 if(correctAns == 3){
                     rightAns = true;
                 }
                 else{
                     rightAns = false;
                 }
-                ansListener.answered(rightAns);
+
             }
             //close frag start new frag
         };
 
+        View.OnClickListener nextClick = new View.OnClickListener(){
+            public void onClick(View v){
+                ansListener.answered(rightAns);
+            }
+        };
         header.setText(bundleIn.getString("header"));
         questionText.setText(bundleIn.getString("questionText"));
         button1.setText(bundleIn.getString("choice1"));
@@ -107,7 +111,7 @@ public class Fragmentq1 extends Fragment {
         button1.setOnClickListener(button1Click);
         button2.setOnClickListener(button2Click);
         button3.setOnClickListener(button3Click);
-
+        next.setOnClickListener(nextClick);
 
 
 
