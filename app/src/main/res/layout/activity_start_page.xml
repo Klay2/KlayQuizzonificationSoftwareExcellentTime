@@ -8,7 +8,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.wisc.cs.klay2.klayquizzonificationsoftwareexcellenttime.StartPage"
-    android:background="#10016f">
+    android:background="#10016f"
+    android:id="@+id/primaryLayout">
 
     <TextView
         android:layout_width="wrap_content"
@@ -45,4 +46,10 @@
         android:textStyle="italic"
         android:background="#ef91ef"
         android:onClick="startQuizz"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/fragHolder"></FrameLayout>
+
 </RelativeLayout>

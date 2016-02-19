@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="QUESTION CONTENT GOES IN HERE"
-            android:id="@+id/textView3"
+            android:id="@+id/questionText"
             android:textSize="24dp"
             android:layout_above="@+id/buttonAns1"
             android:layout_centerHorizontal="true"
