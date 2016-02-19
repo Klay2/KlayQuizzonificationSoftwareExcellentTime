@@ -54,7 +54,6 @@
         android:text="HEADER"
         android:id="@+id/header"
         android:layout_alignParentTop="true"
-        android:layout_alignParentCenter="true"
         android:layout_centerHorizontal="true"
         android:textSize="42dp" />
 

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 /**
  * Created by klay2 on 2/19/16.
  */
-public class QuizzActivity extends AppCompatActivity implements Fragmentq1.OnAnsweredListener {
+public class QuizzActivity extends AppCompatActivity implements Fragmentq1.OnAnsweredListener,Fragmentq2.OnAnsweredListener {
 
 
 
@@ -21,7 +21,7 @@ public class QuizzActivity extends AppCompatActivity implements Fragmentq1.OnAns
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_start_page);
+        setContentView(R.layout.quizzactivity);
         correct = 0;
         numQuestions = 2;
         displayed = 0;
@@ -45,7 +45,7 @@ public class QuizzActivity extends AppCompatActivity implements Fragmentq1.OnAns
         question2.putInt("qType",1);
         question2.putString("correctAns", "boogiepop phantom");
         question2.putString("questionText", "From which early 2000's psychological horror anime is this image?");
-        question2.putint("ImageRID", imageid);//TODO:image resource id
+        question2.putInt("ImageRID", R.drawable.vaporwaverei);//TODO:image resource id
         question2.putString("header","FINAL QUESTION");
         qBundles.add(question2);
 
@@ -62,9 +62,9 @@ public class QuizzActivity extends AppCompatActivity implements Fragmentq1.OnAns
         q1.setArguments(qBundles.get(0));
         getFragmentManager()
                 .beginTransaction()
-                .replace(R.id.fragHolder,q1)//change this
-                .addtoBackStack(null)
-                .commit;
+                .replace(R.id.fragment_container,q1)
+                .addToBackStack(null)
+                .commit();
 
     }
 
@@ -79,18 +79,18 @@ public class QuizzActivity extends AppCompatActivity implements Fragmentq1.OnAns
 
         }else{//get and handle next question
             if(qBundles.get(displayed).getInt("qtype") == 0) {//its a text question so use Fragmentq1
-                next = new Fragmentq1;
+                next = new Fragmentq1();
 
             }else{
-                next = new Fragmentq2;
+                next = new Fragmentq2();
             }
 
             next.setArguments(qBundles.get(displayed));
             getFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.fragHolder,next)
-                    .addtoBackStack(null)//maybe add to backstack? i dunno
-                    .commit;
+                    .replace(R.id.fragment_container,next)
+                    .addToBackStack(null)//maybe add to backstack? i dunno
+                    .commit();
 
 
         }

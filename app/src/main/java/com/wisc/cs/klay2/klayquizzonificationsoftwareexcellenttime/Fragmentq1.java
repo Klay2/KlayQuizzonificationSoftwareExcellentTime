@@ -30,13 +30,13 @@ public class Fragmentq1 extends Fragment {
     }
 
     public interface OnAnsweredListener{
-        public void answered(boolean coorect);
+        public void answered(boolean correct);
     }
 
 
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        if(getArguments() != NULL) {
+        if(getArguments() != null) {
             Bundle bundleIn = getArguments();
             correctAns = bundleIn.getInt("correctAns");
             ansListener = (OnAnsweredListener)getActivity();
@@ -47,18 +47,18 @@ public class Fragmentq1 extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState){
-        Bundle bundleIn = NULL;
-        if(getArguments() != NULL) {
+        Bundle bundleIn = null;
+        if(getArguments() != null) {
              bundleIn = getArguments();
         }
         View view = inflater.inflate(R.layout.fragmentq1, container, false);
 
-        header = view.findViewById(R.id.header);
-        questionText = view.findViewById(R.id.questionText);
-        button1 = view.findViewById(R.id.buttonAns1);
-        button2 = view.findViewById(R.id.buttonAns2);
-        button3 = view.findViewById(R.id.buttonAns3);
-        next = view.findViewById(R.id.buttonNext);
+        header = (TextView)view.findViewById(R.id.header);
+        questionText = (TextView)view.findViewById(R.id.questionText);
+        button1 = (RadioButton)view.findViewById(R.id.buttonAns1);
+        button2 = (RadioButton)view.findViewById(R.id.buttonAns2);
+        button3 = (RadioButton)view.findViewById(R.id.buttonAns3);
+        next = (Button)view.findViewById(R.id.buttonNext);
         View.OnClickListener button1Click = new View.OnClickListener(){
             public void onClick(View v){
                 if(correctAns == 1){
