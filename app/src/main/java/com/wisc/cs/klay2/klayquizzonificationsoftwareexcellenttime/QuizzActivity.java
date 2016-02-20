@@ -1,6 +1,8 @@
 package com.wisc.cs.klay2.klayquizzonificationsoftwareexcellenttime;
 
+import android.app.AlertDialog;
 import android.app.Fragment;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
@@ -45,7 +47,7 @@ public class QuizzActivity extends AppCompatActivity implements Fragmentq1.OnAns
         question2.putInt("qType",1);
         question2.putString("correctAns", "boogiepop phantom");
         question2.putString("questionText", "From which early 2000's psychological horror anime is this image?");
-        question2.putInt("ImageRID", R.drawable.vaporwaverei);//TODO:image resource id
+        question2.putInt("ImageRID", R.drawable.boogiepop);
         question2.putString("header","FINAL QUESTION");
         qBundles.add(question2);
 
@@ -75,16 +77,19 @@ public class QuizzActivity extends AppCompatActivity implements Fragmentq1.OnAns
         Fragment next;
         if(rightAns == true){correct++;}
         displayed++;
+        System.out.println("Displayed = "+displayed);
         if(displayed == numQuestions){// have displayed all the questions so call final screen
+            endOfQuizz();
 
         }else{//get and handle next question
-            if(qBundles.get(displayed).getInt("qtype") == 0) {//its a text question so use Fragmentq1
+           /* if(qBundles.get(displayed-1).getInt("qtype") == 0) {//its a text question so use Fragmentq1
                 next = new Fragmentq1();
+                System.out.println("pulling a new q1 fragment");
 
             }else{
                 next = new Fragmentq2();
-            }
-
+            }*/
+            next = new Fragmentq2();
             next.setArguments(qBundles.get(displayed));
             getFragmentManager()
                     .beginTransaction()
@@ -94,6 +99,33 @@ public class QuizzActivity extends AppCompatActivity implements Fragmentq1.OnAns
 
 
         }
+
+    }
+
+    private void endOfQuizz(){
+
+
+
+        new AlertDialog.Builder(this)
+                .setCancelable(true)
+                .setTitle("Quizz Ended")
+                .setMessage("Number Correct: "+correct)
+                .setPositiveButton("Again!!", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        displayed = 0;
+                        correct = 0;
+                        getFragmentManager().popBackStack();
+                    }
+                })
+                .setNegativeButton("This is terrible. No more.", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        finish();
+                    }
+                })
+                .show();
 
     }
 

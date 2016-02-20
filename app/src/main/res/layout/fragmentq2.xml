@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="HEADER"
-        android:id="@+id/textView3"
+        android:id="@+id/header"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:textSize="42dp" />
@@ -17,18 +17,20 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView"
+        android:id="@+id/image"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/vaporwaverei"
+        android:scaleType="fitCenter" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="QUESTION TEXT GOES IN HERE"
-        android:id="@+id/textView4"
+        android:id="@+id/questionText"
         android:textSize="24dp"
-        android:layout_above="@+id/imageView"
+        android:layout_above="@+id/image"
         android:layout_centerHorizontal="true" />
 
     <Button
@@ -42,7 +44,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText"
+        android:id="@+id/answerField"
         android:layout_above="@+id/buttonNext"
         android:layout_centerHorizontal="true"
         android:text="USER TYPES IN ANSWER HERE" />
